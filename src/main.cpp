@@ -3,18 +3,16 @@
 #include <string>
 #include <cassert>
 
-extern "C" {
-    #include "lua.h"
-    #include "lauxlib.h"
-    #include "lualib.h"
-}
-
 #include "State.hpp"
 
 int main() {
     lp::State state;
-    state.loadFile("../resources/lua_scripts/test1.lua");
-/*
+    // state.loadFile("../resources/lua_scripts/test1.lua");
+    state.push(5);
+    std::cout << state.read<int>(1) << std::endl;
+    
+
+/*  
     lua_getglobal(l, "add_two_numbers");
     lua_pushinteger(l, 1);
     lua_pushinteger(l, 2);

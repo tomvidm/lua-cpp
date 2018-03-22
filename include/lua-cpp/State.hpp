@@ -20,6 +20,10 @@ namespace lp {
         void push(const bool& value);
         void push(const int& value);
         void push(const float& value);
+
+        template <class T> T read(int index) const;
+
+        int getStackSize() const;
     private:
         lua_State* luaState;
     }; // class State

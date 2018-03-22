@@ -35,4 +35,23 @@ namespace lp {
     void State::push(const float& value) {
         lua_pushnumber(luaState, value);
     }
+
+    template <>
+    bool State::read(int index) const {
+        return static_cast<bool>(lua_toboolean(luaState, index));
+    }
+
+    template <>
+    int State::read(int index) const {
+        return static_cast<int>(lua_tointeger(luaState, index));
+    }
+
+    template <>
+    float State::read(int index) const {
+        return static_cast<float>(lua_tonumber(luaState, index));
+    }
+
+    int State::getStackSize() const {
+        return lua_gettop(luaState);
+    }
 }
