@@ -7,9 +7,10 @@
 
 int main() {
     lp::State state;
+    state.loadFile("../resources/lua_scripts/test1.lua");
     // state.loadFile("../resources/lua_scripts/test1.lua");
     state.push(5);
-    std::cout << state.read<int>(1) << std::endl;
+    std::cout << state.getStackSize() << std::endl;
     
 
 /*  

@@ -2,19 +2,21 @@
 The `State` class should encapsulate a `lua_State` and handle the details of the lua stack.
 
 ## Use cases
-### Initializing an empty lua state
-To initialize an empty lua state, this should be sufficient
+### Initialize an empty lua state
+To initialize an empty lua state:
 ```
-int main() {
-    lp::State state;
-}
+lp::State state;
 ```
 
 ### Loading a chunk from a file
 To load a chunk from a `.lua` file, the following methods should be possible
 ```
-int main() {
-    lp::State state1;
-    state1.load("path/to/file.lua");
-}
+lp::State state;
+state.load("path/to/file.lua");
+```
+
+### Execute a lua function
+```
+lp::State state1;
+state.call("functionname", )
 ```

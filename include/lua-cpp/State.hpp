@@ -20,6 +20,8 @@ namespace lp {
         void push(const bool& value);
         void push(const int& value);
         void push(const float& value);
+        
+        void operator () (const std::string& str);
 
         template <class T> T read(int index) const;
 
